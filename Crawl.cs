@@ -10,26 +10,51 @@ namespace WebCrawler
 {
     public class Crawl
     {
-        public void getData()
+        private readonly WebClient client = new WebClient();
+
+        public void GetData()
         {
             Accessor crawler = new Accessor();
             crawler.LinksQueue.Add(crawler.RootSite + "index.html");
-            //While LinksQueue is not empty (check its Count or length to determine this)
+            //While LinksQueue is not empty 
             while (crawler.LinksQueue.Count > 0)
             {
-                //var firstLink = crawler.LinksQueue[0];
+                var firstLink = crawler.LinksQueue[0];
                 crawler.LinksQueue.RemoveAt(0);
+                //If this link is not in the VisitedLinks list
+                if (crawler.VisitedLinks.Contains(firstLink) == false)
+                {
+                    // Download the web page at that first link
+                    crawler.WebPage = client.DownloadString(crawler.Url);
+                    Console.WriteLine(crawler.WebPage);
+                    // Add the link to VisitedLinks
+                    crawler.VisitedLinks.Add(firstLink);
+                    // find the title<title> of that page 
+                    crawler.Pattern = "<title>(.*?)</title>";
+                    Match result = Regex.Match(crawler.WebPage, crawler.Pattern);
+                    // Add the title and the link as a pair to the Dictionary.
+                    crawler.MyDictionary.Add(crawler.Pattern, firstLink);
+                    // Print out the title. If you’re using Visual Studio,
+                    // add the title to the listBox that displays the search words
+                    // found using .Items.Add
+                    
+
+                    crawler.Title = "unknown";
+                    if (result.Success)
+                    {
+                        crawler.Title = result.Groups[1].Value;
+                    }
+                    Console.WriteLine("Found title: " + crawler.Title);
+                }
             }
-            /*If this link is not in the VisitedLinks list (use Contains in C#/Java, includes in JavaScript, not in in Python)
-            Download the web page at that first link (see starter code above that reads in the file/url).
-            Add the link to VisitedLinks
-            Using starter code programs as a guide, find the title <title> of that page and Add the title and the link as a pair to the Dictionary. Print out the title. If you’re using Visual Studio,  add the title to the listBox that displays the search words found using .Items.Add. 
-            */
-            if(crawler.VisitedLinks)
+
         }
+    }
 
     }
+
+
         
-}
+
     
 

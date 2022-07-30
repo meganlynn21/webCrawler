@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace WebCrawler
 { 
     public class Accessor
-    { 
+    {
         public string Url { get; set; }
         public string WebPage { get; set; }
         public string Pattern { get; set; }
@@ -16,7 +16,7 @@ namespace WebCrawler
         public string RootSite { get; set; }
         public List<string> LinksQueue { get; set; }
         public List<string> VisitedLinks { get; set; }
-        public Dictionary<string, long> HashTable { get; set; }
+        public Dictionary<string, string> MyDictionary { get; set; }
 
 
     }
