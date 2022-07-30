@@ -30,7 +30,12 @@ namespace WebCrawler
             Accessor crawler = new Accessor();
          
             crawler.RootSite = "http://citelms.net/Internships/Summer_2018/Fan_Site/";
+            crawler.Url = "http://www.elms.edu";
+            crawler.LinksQueue = new List<string>();
+            crawler.VisitedLinks = new List<string>();
+            crawler.MyDictionary = new Dictionary<string, string>();
             crawler.LinksQueue.Add(crawler.RootSite + "index.html");
+  
             //While LinksQueue is not empty 
             while (crawler.LinksQueue.Count > 0)
             {
@@ -48,11 +53,11 @@ namespace WebCrawler
                     crawler.Pattern = "<title>(.*?)</title>";
                     Match result = Regex.Match(crawler.WebPage, crawler.Pattern);
                     // Add the title and the link as a pair to the Dictionary.
-                    crawler.HashTable.Add(crawler.Pattern, firstLink);
+                    crawler.MyDictionary.Add(crawler.Pattern, firstLink);
                     // Print out the title. If you’re using Visual Studio,
                     // add the title to the listBox that displays the search words
                     // found using .Items.Add
-                    keywordListBox.Items.Add(crawler.Pattern);
+                    keywordListBox.Items.Add(result);
 
                 }
             }

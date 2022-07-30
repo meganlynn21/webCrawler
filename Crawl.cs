@@ -33,7 +33,7 @@ namespace WebCrawler
                     crawler.Pattern = "<title>(.*?)</title>";
                     Match result = Regex.Match(crawler.WebPage, crawler.Pattern);
                     // Add the title and the link as a pair to the Dictionary.
-                    crawler.HashTable.Add(crawler.Pattern, firstLink);
+                    crawler.MyDictionary.Add(crawler.Pattern, firstLink);
                     // Print out the title. If you’re using Visual Studio,
                     // add the title to the listBox that displays the search words
                     // found using .Items.Add
