@@ -17,8 +17,11 @@ namespace WebCrawler
         public string Title { get; set; }
         public string RootSite { get; set; }
         public List<string> LinksQueue { get; set; }
+        public List<string> NewList { get; set; }
         public List<string> VisitedLinks { get; set; }
         public Dictionary<string, string> MyDictionary { get; set; }
+        public bool Visible { get; set; }
+
 
 
     }
