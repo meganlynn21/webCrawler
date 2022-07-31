@@ -35,6 +35,7 @@
             this.visitedLinksListBox = new System.Windows.Forms.ListBox();
             this.keywordLbl = new System.Windows.Forms.Label();
             this.visitedLinksLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // startCrawlBtn
@@ -51,7 +52,7 @@
             // 
             // searchTxtBox
             // 
-            this.searchTxtBox.Location = new System.Drawing.Point(290, 73);
+            this.searchTxtBox.Location = new System.Drawing.Point(816, 79);
             this.searchTxtBox.Name = "searchTxtBox";
             this.searchTxtBox.Size = new System.Drawing.Size(150, 31);
             this.searchTxtBox.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             this.searchBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.searchBtn.Location = new System.Drawing.Point(537, 67);
+            this.searchBtn.Location = new System.Drawing.Point(625, 67);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(135, 43);
             this.searchBtn.TabIndex = 0;
@@ -106,11 +107,21 @@
             this.visitedLinksLbl.TabIndex = 3;
             this.visitedLinksLbl.Text = "Visited Links";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(919, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1197, 704);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.visitedLinksLbl);
             this.Controls.Add(this.keywordLbl);
             this.Controls.Add(this.visitedLinksListBox);
@@ -135,5 +146,6 @@
         private System.Windows.Forms.ListBox visitedLinksListBox;
         private System.Windows.Forms.Label keywordLbl;
         private System.Windows.Forms.Label visitedLinksLbl;
+        private System.Windows.Forms.Label label1;
     }
 }
