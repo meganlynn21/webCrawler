@@ -19,21 +19,21 @@ namespace WebCrawler
             //While LinksQueue is not empty 
             while (crawler.LinksQueue.Count > 0)
             {
-                var firstLink = crawler.LinksQueue[0];
+                var link = crawler.LinksQueue[0];
                 crawler.LinksQueue.RemoveAt(0);
                 //If this link is not in the VisitedLinks list
-                if (crawler.VisitedLinks.Contains(firstLink) == false)
+                if (crawler.VisitedLinks.Contains(link) == false)
                 {
                     // Download the web page at that first link
                     crawler.WebPage = client.DownloadString(crawler.Url);
                     Console.WriteLine(crawler.WebPage);
                     // Add the link to VisitedLinks
-                    crawler.VisitedLinks.Add(firstLink);
+                    crawler.VisitedLinks.Add(link);
                     // find the title<title> of that page 
                     crawler.Pattern = "<title>(.*?)</title>";
                     Match result = Regex.Match(crawler.WebPage, crawler.Pattern);
                     // Add the title and the link as a pair to the Dictionary.
-                    crawler.MyDictionary.Add(crawler.Pattern, firstLink);
+                    crawler.MyDictionary.Add(crawler.Pattern, link);
                     // Print out the title. If you’re using Visual Studio,
                     // add the title to the listBox that displays the search words
                     // found using .Items.Add
