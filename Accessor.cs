@@ -12,6 +12,8 @@ namespace WebCrawler
         public string Url { get; set; }
         public string WebPage { get; set; }
         public string Pattern { get; set; }
+        public string Pattern2 { get; set; }
+
         public string Title { get; set; }
         public string RootSite { get; set; }
         public List<string> LinksQueue { get; set; }
