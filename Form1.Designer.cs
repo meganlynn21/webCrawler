@@ -64,7 +64,7 @@
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(135, 43);
             this.searchBtn.TabIndex = 0;
-            this.searchBtn.Text = "Search Titles";
+            this.searchBtn.Text = "Search Links";
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
@@ -102,9 +102,9 @@
             this.visitedLinksLbl.AutoSize = true;
             this.visitedLinksLbl.Location = new System.Drawing.Point(625, 145);
             this.visitedLinksLbl.Name = "visitedLinksLbl";
-            this.visitedLinksLbl.Size = new System.Drawing.Size(109, 25);
+            this.visitedLinksLbl.Size = new System.Drawing.Size(215, 25);
             this.visitedLinksLbl.TabIndex = 3;
-            this.visitedLinksLbl.Text = "Visited Links";
+            this.visitedLinksLbl.Text = "Links Found in Web Crawl";
             // 
             // Form1
             // 
